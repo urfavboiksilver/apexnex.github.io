@@ -27,10 +27,7 @@ const transition = document.getElementById('transition');
 
 
 setTimeout(function () {
-    var loader  = document.getElementById('transition');
-    window.addEventListener("load",function(){
-        transition.classList.add('shown');
-    })
+    transition.classList.add('shown');
 }, 1000);
 
 function redirect(element) {
@@ -49,7 +46,7 @@ function redirect(element) {
                 window.location.href = "underconstruction.html";
             }
         }
-     };
-     xhr.send();
+    };
+    xhr.send();
     },1500);
 }
