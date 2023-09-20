@@ -26,14 +26,10 @@ function addClassToDiv() {
 const transition = document.getElementById('transition');
 
 
-
 setTimeout(function () {
-    var loader  = document.getElementById('transition');
-    window.addEventListener("load",function(){
-        transition.classList.add('shown');
-    })
+    transition.classList.add('shown');
 }, 1000);
-    
+
 function redirect(element) {
     var linkHref = element.getAttribute("data-href");
     transition.classList.remove('shown');
@@ -42,7 +38,7 @@ function redirect(element) {
 
     xhr.open("HEAD", linkHref, true);
     setTimeout(function (){
-    xhr.onreadystatechange = function () {
+       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
                 window.location.href = linkHref;
