@@ -27,7 +27,10 @@ const transition = document.getElementById('transition');
 
 
 setTimeout(function () {
-    transition.classList.add('shown');
+    var loader  = document.getElementById('transition');
+    window.addEventListener("load",function(){
+        transition.classList.add('shown');
+    })
 }, 1000);
 
 function redirect(element) {
@@ -38,7 +41,7 @@ function redirect(element) {
 
     xhr.open("HEAD", linkHref, true);
     setTimeout(function (){
-    xhr.onreadystatechange = function () {
+       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
                 window.location.href = linkHref;
@@ -46,7 +49,7 @@ function redirect(element) {
                 window.location.href = "underconstruction.html";
             }
         }
-    };
-    xhr.send();
+     };
+     xhr.send();
     },1500);
 }
