@@ -26,10 +26,14 @@ function addClassToDiv() {
 const transition = document.getElementById('transition');
 
 
-setTimeout(function () {
-    transition.classList.add('shown');
-}, 1000);
 
+setTimeout(function () {
+    var loader  = document.getElementById('transition');
+    window.addEventListener("load",function(){
+        transition.classList.add('shown');
+    })
+}, 1000);
+    
 function redirect(element) {
     var linkHref = element.getAttribute("data-href");
     transition.classList.remove('shown');
